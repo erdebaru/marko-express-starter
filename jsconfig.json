@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@root/*"    : ["./*"],
+      "@config"    : ["./config"],
+      "@model/*"   : ["./model/*"],
+      "@logger"    : ["./utils/logger"],
+      "@email"     : ["./utils/email"],
+      "@db"        : ["./utils/db"],
+      "@auth/*"    : ["./auth/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
