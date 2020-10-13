@@ -3,26 +3,38 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "debug": "SET DEBUG=new-proj:* & node ./bin/www",
+    "browser-refresh": "browser-refresh ./bin/www"
   },
-
   "_moduleAliases": {
-    "@root"        : ".",
-    "@pages"       : "pages",
-    "@components"  : "components",
-    "@models"      : "architecture/data-access/models",
-    "@services"    : "business/services",
-    "@flow"        : "business/flow"
+    "@root": ".",
+    "@config": "config",
+    "@pages": "pages",
+    "@layouts": "layouts",
+    "@components": "components",
+    "@db": "architecture/db",
+    "@email": "architecture/email",
+    "@services": "business/services",
+    "@flow": "business/flow"
   },
-
   "dependencies": {
+    "@lasso/marko-taglib": "^1.0.15",
+    "@marko/express": "^1.0.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
+    "lasso": "^3.4.0",
+    "lasso-marko": "^2.5.0",
+    "lasso-sass": "^3.0.0",
     "marko": "^4.23.8",
     "module-alias": "^2.2.2",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "browser-refresh": "^1.7.3",
+    "browser-refresh-taglib": "^1.1.0"
   }
 }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <title>
+        Marko Starter - ${input.title||'No Title'}
+      </title>
+      <lasso-head/>
+  </head>
+  <body>
+    <default-header/>
+    <div>
+      <${input.body}/>
+    </div>
+    <default-footer/>
+    <lasso-body/>
+    <browser-refresh enabled=true/> 
+  </body>
+</html>
+

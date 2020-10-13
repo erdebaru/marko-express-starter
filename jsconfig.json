@@ -3,13 +3,15 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@root/*"    : ["./*"],
-      "@config"    : ["./config"],
-      "@model/*"   : ["./model/*"],
-      "@logger"    : ["./utils/logger"],
-      "@email"     : ["./utils/email"],
-      "@db"        : ["./utils/db"],
-      "@auth/*"    : ["./auth/*"]
+      "@root"        : ["."],
+      "@config"      : ["config"],
+      "@pages"       : ["pages"],
+      "@layouts"     : ["layouts"],
+      "@components"  : ["components"],
+      "@db"          : ["architecture/db"],
+      "@email"       : ["architecture/email"],
+      "@services"    : ["business/services"],
+      "@flow"        : ["business/flow"]
     }
   },
   "exclude": ["node_modules"]

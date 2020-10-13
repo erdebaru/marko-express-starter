@@ -1,0 +1,6 @@
+node_modules
+.git
+.cache
+static/dist
+# added because server-side rendered marko files will be recompiled on request which creates infinite browser-refresh loop
+*.marko.js 
