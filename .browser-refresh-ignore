@@ -4,3 +4,4 @@ node_modules
 static/dist
 # added because server-side rendered marko files will be recompiled on request which creates infinite browser-refresh loop
 *.marko.js 
+README.md
