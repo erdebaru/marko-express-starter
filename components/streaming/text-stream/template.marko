@@ -1,6 +1,7 @@
-<div for(item in data.items)
-    style="border: 1px solid black; padding: 10px; margin-bottom: 1em;">
-    <h2>${item.title}</h2>
-    <b>Price:</b>
-    ${item.price}
-</div>
+<for|item| of=data.items>
+    <div style="border: 1px solid black; padding: 10px; margin-bottom: 1em;">
+        <h2>${item.title}</h2>
+        <b>Price:</b>
+        ${item.price}
+    </div>
+</for>  
