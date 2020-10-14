@@ -1,16 +1,26 @@
 import Layout from '@layouts/default'
 
-style.sass {
-  h1 {
-    color: #B4DA55;
-  }
-}
-
 <${Layout} title="Home">
     <@body>
-      <div>
+      <div.container>
         <h1>Streaming test</h1>
-        <text-stream/>
+        <search on-change("onSearchChange")/>
+        <br/>
+        <if(state.search)>
+          <text-stream/>
+        </if>
       </div>
     </@body>
 </>
+
+
+style.scss {
+  h1 {
+    color: #B4DA55;
+  }
+  .container {
+    br {
+      margin-bottom: 100px;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+class {
+  onCreate(){
+    this.state = {
+      search: ""
+    }
+  }
+  onChange(event){
+    this.state.search = event.target.value;
+    this.emit("change", this.state.search);
+  }
+}
+
+<div>
+  <p>I am a stateful component</p>
+  <input type="text" value=state.search on-change("onChange")/>
+</div>
