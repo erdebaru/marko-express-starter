@@ -1,3 +1,3 @@
 module.exports = {
-  isProduction: process.env.ENVIRONMENT == 'production'
+  isProduction: process.env.env == 'production'
 }
