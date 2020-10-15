@@ -9,6 +9,9 @@ const cookieParser = require('cookie-parser');
 
 const createError = require('http-errors');
 const express = require('express');
+const favicon = require('serve-favicon');
+const compression    = require('compression');
+
 const markoMiddleware = require("@marko/express").default;
 
 
@@ -19,11 +22,15 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(compression());
+app.use(favicon(path.join(__dirname, 'static', 'favicon.ico')));
 
 
 require('marko/browser-refresh').enable();
 
 // Lasso setup | Configure lasso to control how JS/CSS/etc. is delivered to the browser
+
+
 require('lasso').configure({
   plugins: [
       'lasso-marko', // Allow Marko templates to be compiled and transported to the browser
