@@ -1,0 +1,28 @@
+class {
+  onSearch(){
+    this.emit('search', this.getEl('search-bar-input').value);
+  }
+}
+<div.search-bar>
+  <input.search-bar-input key="search-bar-input" type="text" name="search-bar" value=input.text placeholder="Enter keyword.">
+  <button.search-bar-button type="button" on-click("onSearch")>&#128269;</button>
+</div>
+
+style.scss {
+  .search-bar{
+    display:flex;
+    .search-bar-input {
+      border: 1px solid #d3d3d3;
+      border-radius: 1rem;
+      padding: 1rem 1rem 1rem 1rem;
+      box-sizing: border-box;
+      flex:1;
+    }
+    .search-bar-button{
+      border-radius: 1rem;
+      width: 64px;
+      margin-left: 1rem;
+      font-size: 1.5rem;
+    }
+  }  
+}

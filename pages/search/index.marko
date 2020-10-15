@@ -1,0 +1,26 @@
+import Layout from '@layouts/default'
+
+<${Layout} title="Search">
+    <@body>
+      <div.container>
+        <h2>Searching Example</h2>
+        <!-- <search-bar on-search("onSearch")/> -->
+        <h3>Results:</h3>
+        <search-stream q=input.q start=input.start offset=input.offset order=input.order/>
+      </div>
+    </@body>
+</>
+
+style.scss {
+  h2 {
+    border-bottom: 1px solid #d3d3d3;
+    padding-bottom: .5rem;
+  }
+  
+  .movie-card {
+    border: 1px solid #d3d3d3;
+    border-radius: .5rem;
+    padding: 1rem; 
+    margin-top: 1em;
+  }
+}

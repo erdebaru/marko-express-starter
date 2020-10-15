@@ -1,0 +1,10 @@
+<div>
+    <for|item| of=data.items>
+        <div.movie-card>
+            <h3>${item.movie_title}</h3>
+            <p><b>Genre: ${item.movie_genre}</b></p>
+            <p><i>Released: ${item.date}</i></p>
+        </div>
+    </for>  
+    <p>Showing ${data.start + 1} - ${data.offset} of ${data.total}</p>
+</div>
