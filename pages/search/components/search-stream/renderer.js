@@ -7,8 +7,6 @@ const EventEmitter = require('events').EventEmitter;
 
 
 module.exports = function(input, out) {
-    console.log("search-stream inputs:")
-    console.log(input);
     
     var asyncOut = out.beginAsync({
         timeout: 0 /* disable the timeout */
@@ -20,7 +18,6 @@ module.exports = function(input, out) {
         .on('data', function(items) {
             // Render out the current page of results to our
             // async fragment.
-            console.log("search-stream before flush:")
             template.render({
                 total: items.total,
                 start: input.start||0,
@@ -40,27 +37,27 @@ function getSearchResultsStream(q, order, start, offset) {
     var ee = new EventEmitter();
 
     movieService.getMovies(q, start, offset, order).then(result => {
-        // if(result.movies.length <= 0){
-        //     ee.emit('data', {
-        //         total: result.total,
-        //         items: []
-        //     });
-        // }
-        ee.emit('data', {
-            total: result.total,
-            items: result.movies
-        });
-        // for(let i = 0; i < result.movies; i++){
-        //     ee.emit('data', {
-        //         total: result.total,
-        //         items: [result.movies[i]]
-        //     });
-        // }
-        setTimeout(()=> {
-            ee.emit('end');
-        }, 1000);
-        
+        let currentIndex = 0;
+
+        function getPage(){
+            ee.emit('data', {
+                total: result.total,
+                items: result.movies.filter((m, i) => i >= currentIndex && i < currentIndex + 4)
+            });
+            
+            if(result.movies.length <= currentIndex){
+                ee.emit('end');
+                return;
+            }else{
+                currentIndex += 4;
+                getPage();
+            }
+        }
+
+        process.nextTick(getPage);
     }).catch(reason => {throw reason});
 
     return ee;
 }
+
+

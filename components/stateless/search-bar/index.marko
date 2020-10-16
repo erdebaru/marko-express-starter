@@ -4,25 +4,35 @@ class {
   }
 }
 <div.search-bar>
-  <input.search-bar-input key="search-bar-input" type="text" name="search-bar" value=input.text placeholder="Enter keyword.">
+  <input.search-bar-input key="search-bar-input" type="text" name="search-bar" value=input.text placeholder="検索キーワードを入力してください。">
+  <openable-field/>
   <button.search-bar-button type="button" on-click("onSearch")>&#128269;</button>
 </div>
 
 style.scss {
   .search-bar{
     display:flex;
+    border: 1px solid #d3d3d3;
+    border-radius: 1rem;
     .search-bar-input {
-      border: 1px solid #d3d3d3;
+      border:none;
       border-radius: 1rem;
       padding: 1rem 1rem 1rem 1rem;
       box-sizing: border-box;
       flex:1;
     }
     .search-bar-button{
-      border-radius: 1rem;
+      border: none;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      border-left: 1px solid #d3d3d3;
       width: 64px;
-      margin-left: 1rem;
       font-size: 1.5rem;
+      transition: all ease-in .5s;
+      &:hover{ box-shadow: 0px 0px 5px 0px #d3d3d3; background: #f1f1f1; }
+    }
+    *,*:focus,*:hover{
+      outline:none;
     }
   }  
 }

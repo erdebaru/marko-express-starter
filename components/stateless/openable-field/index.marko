@@ -1,0 +1,35 @@
+<label.exclude-label>除外</label>
+<input.search-bar-input.add-exclude placeholder="除外キーワード追加" on-change("onChange")/>
+
+class {
+  onCreate(){
+    
+  }
+  
+  onChange(event){
+    
+    document.querySelector('.exclude-label').style = "display: block !important"
+    document.querySelector('.add-exclude').style = "border-left: none !important;"
+    event.target.style.width = (((event.target.value.length + 1) * 20)) + "px";
+  }
+}
+
+style.scss {
+  .exclude-label{
+    display:none;
+    border-left: 1px solid #d3d3d3 !important;
+    padding: 1rem 1rem 1rem 1rem;
+    background: #f1f1f1;
+  }
+  .add-exclude {
+    flex: none !important;
+    border-left: 1px solid #d3d3d3 !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    transition:  all ease-in 0.5s;
+    width: 138px;
+    &:hover, &:focus{
+      width: 300px;
+    }
+  }
+}

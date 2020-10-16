@@ -4,9 +4,11 @@ import Layout from '@layouts/default'
     <@body>
       <div.container>
         <h2>Searching Example</h2>
-        <!-- <search-bar on-search("onSearch")/> -->
+        <search-bar on-search("onSearch")/>
         <h3>Results:</h3>
-        <search-stream q=input.q start=input.start offset=input.offset order=input.order/>
+        <div.mb-2>
+          <search-stream q=input.q start=input.start offset=input.offset order=input.order/>
+        </div>
       </div>
     </@body>
 </>
