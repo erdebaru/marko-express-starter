@@ -1,0 +1,15 @@
+import Layout from '@layouts/default'
+
+<${Layout} title="Error">
+  <@body>
+    <main>
+      <section>
+        <h1>System error has occurred.</h1>
+        <h2>${input.status ? input.status : 500} - ${input.message}</h2>
+        <if(input.stack)>
+          <pre><code>${input.stack}</code></pre>  
+        </if>
+      </section>
+    </main>
+  </@body>
+</>
